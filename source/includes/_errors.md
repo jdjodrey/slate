@@ -1,20 +1,12 @@
 # Errors
 
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
-
-The Kittn API uses the following error codes:
-
+The Teamworks API uses the following error codes:
 
 Error Code | Meaning
 ---------- | -------
-400 | Bad Request -- Your request sucks
-401 | Unauthorized -- Your API key is wrong
-403 | Forbidden -- The kitten requested is hidden for administrators only
-404 | Not Found -- The specified kitten could not be found
-405 | Method Not Allowed -- You tried to access a kitten with an invalid method
-406 | Not Acceptable -- You requested a format that isn't json
-410 | Gone -- The kitten requested has been removed from our servers
-418 | I'm a teapot
-429 | Too Many Requests -- You're requesting too many kittens! Slow down!
-500 | Internal Server Error -- We had a problem with our server. Try again later.
-503 | Service Unavailable -- We're temporarially offline for maintanance. Please try again later.
+200 OK | Indicates the request was successful. Used as success response code for all requests except for Inserts, which return a 201 Created.
+201 Created | Indicates that a new resource was created successfully. The response will include a link to the new resource as a "Location" header as well as a "uri" parameter in the response body.
+400 Invalid Request | The request failed due to issues with the data sent in the request. The response will include error message details.
+401 Unauthorized | Either an Authorization header with API token was not included with the request or the token is invalid.
+404 Not Found | The requested resource could not be found.
+500 Server Error | The API server encountered an unexpected error and could not process your request. Teamworks technical support will be notified when these occur.
